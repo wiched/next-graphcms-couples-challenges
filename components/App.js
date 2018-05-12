@@ -24,7 +24,7 @@ const App = ({ children, pathname }) => (
         line-height: 1.5;
       }
       main {
-        max-width: 650px;
+        max-width: 750px;
         margin: 32px auto;
         padding: 0 24px;
       }

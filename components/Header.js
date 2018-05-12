@@ -2,8 +2,9 @@ import Link from 'next/link'
 
 const Header = ({ pathname }) => (
   <header>
-    <nav className="cyan">
-      <div className="nav-wrapper">
+
+    <nav className="deep-orange darken-1">
+      <div className="nav-wrapper ">
         <a href="/" className="brand-logo center">Couples Challenges</a>
         <ul id="nav-mobile" className="left hide-on-med-and-down">
           <li className={pathname === '/' && 'active'}>
@@ -30,8 +31,11 @@ const Header = ({ pathname }) => (
         </ul>
       </div>
     </nav>
-    <style jsx>{`
 
+    <style jsx>{`
+    button:focus {
+      background-color: transparent;
+    }
     `}</style>
   </header>
 )

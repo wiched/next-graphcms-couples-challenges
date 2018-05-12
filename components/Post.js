@@ -26,7 +26,19 @@ const PostContent = ({ data: { loading, error, post } }) => {
       </article>
     )
   }
-  return <h2>Loading post...</h2>
+  return (
+    <div className="preloader-wrapper active">
+      <div className="spinner-layer spinner-red-only">
+        <div className="circle-clipper left">
+          <div className="circle"></div>
+        </div><div className="gap-patch">
+          <div className="circle"></div>
+        </div><div className="circle-clipper right">
+          <div className="circle"></div>
+        </div>
+      </div>
+    </div>
+  )
 }
 
 export const singlePost = gql`
