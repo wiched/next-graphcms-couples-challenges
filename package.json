@@ -6,11 +6,8 @@
   "author": "Hugo Meissner <hugomeissner@icloud.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "node server.js",
-    "build": "next build",
     "start": "node server.js",
-    "lint": "standard",
-    "export": "next export"
+    "lint": "standard"
   },
   "dependencies": {
     "apollo-cache-inmemory": "^1.1.1",
@@ -27,6 +24,7 @@
     "react": "^16.3.2",
     "react-apollo": "^2.0.1",
     "react-dom": "^16.3.2",
+    "react-facebook": "^5.0.3",
     "react-flip-move": "^3.0.1",
     "react-markdown": "^3.1.0"
   },

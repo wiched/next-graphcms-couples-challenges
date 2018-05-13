@@ -7,14 +7,13 @@ const AuthorInfo = ({ data: { loading, error, allAbouts } }) => {
   if (!loading) {
     return (
       <Fragment>
-
         {allAbouts.map(about => (
           <div className='author' key={about.id}>
             <h4 id="about">{about.title}</h4>
             <div className='info-header'>
               <img
                 alt={about.title}
-                src={`https://media.graphcms.com/resize=w:300,h:300,fit:crop/${about.image.handle}`}
+                src={`https://media.graphcms.com/resize=w:481,h:190,fit:crop/${about.image.handle}`}
               />
 
             </div>
@@ -36,6 +35,10 @@ const AuthorInfo = ({ data: { loading, error, allAbouts } }) => {
           img {
             height: 120px;
             width: auto;
+          }
+
+          #about {
+            text-align: center
           }
         `}</style>
       </Fragment>

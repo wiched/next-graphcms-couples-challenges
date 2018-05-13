@@ -1,5 +1,6 @@
 import { Fragment } from 'react'
 import Header from './Header'
+import Footer from './Footer'
 import Head from 'next/head'
 
 const App = ({ children, pathname }) => (
@@ -15,14 +16,18 @@ const App = ({ children, pathname }) => (
     <main className="container">
       {children}
     </main>
+    <Footer />
     <style jsx global>{`
+
       body {
-        font-family: 'Source Sans Pro', sans-serif;
+        font-family: Roboto, GillSans, Calibri, Trebuchet, sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         margin: 0;
         font-size: 16px;
         line-height: 1.5;
+        color: #6c747f;
+
       }
       main {
         max-width: 750px !important;
@@ -39,6 +44,21 @@ const App = ({ children, pathname }) => (
       }
       .showMore button, #nav-mobile button {
         all: unset
+      }
+      button:focus {
+        background-color: transparent !important;
+        box-shadow: none !important;
+      }
+      .btn:hover {
+        background-color: #f4511e;
+        box-shadow: none;
+      }
+      img {
+        height: auto;
+        max-width: 100%;
+      }
+      .pointer {
+        cursor: pointer;
       }
     `}</style>
   </Fragment>

@@ -12,28 +12,15 @@ const PostContent = ({ data: { loading, error, post } }) => {
         <p>{post.dateAndTime.substr(0, 10)}</p>
         <div className='placeholder'>
           <img
+            className="z-depth-1"
             alt={post.title}
-            src={`https://media.graphcms.com/resize=w:650,h:366,fit:crop/${post.coverImage.handle}`}
+            src={`https://media.graphcms.com/resize=w:650,h:366/${post.coverImage.handle}`}
           />
         </div>
         <Markdown
           source={post.content}
           escapeHtml={false}
         />
-        <div className="col s12 m8 offset-m2 l6 offset-l3">
-          <div className="card-panel grey lighten-5 z-depth-1">
-            <div className="row valign-wrapper">
-              <div className="col s2">
-                <img src="https://picsum.photos/50/50" alt="" className="circle responsive-img" />
-              </div>
-              <div className="col s10">
-                <span className="black-text">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo adipisci sit distinctio sapiente expedita in molestias
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
         <style jsx>{`
 
         `}</style>

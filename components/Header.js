@@ -36,6 +36,19 @@ const Header = ({ pathname }) => (
     button:focus {
       background-color: transparent;
     }
+    @media (max-width: 992px) {
+      .brand-logo {
+        display: none !important;
+      }
+      .hide-on-med-and-down {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important
+      }
+      nav ul.left {
+        float: none !important;
+      }
+    }
     `}</style>
   </header>
 )

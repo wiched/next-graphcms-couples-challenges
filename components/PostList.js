@@ -13,15 +13,16 @@ const PostList = ({ data: { loading, error, allPosts, _allPostsMeta }, loadMoreP
       <section>
 
         <h4 id="challenges">Pick A Challenge</h4>
+        <p>Currently we have {_allPostsMeta.count} challenges</p>
         <div className="row">
           <ul>
-            <FlipMove duration={750} easing="ease-out">
+            <FlipMove duration={300} easing="ease-out">
               {allPosts.map(post => (
-                <li key={`post-${post.id}`} className="col s12">
+                <li key={`post-${post.id}`} className="col s12 pointer z-depth-1">
 
                   <Link prefetch href={`/post?slug=${post.slug}`} as={`/post/${post.slug}`}>
                     <div>
-                      <div className="col s12 m6">
+                      <div className="col s12 m6 mt25">
                         <img
                           className="img-responsive"
                           alt={post.title}
@@ -46,6 +47,8 @@ const PostList = ({ data: { loading, error, allPosts, _allPostsMeta }, loadMoreP
             {areMorePosts
               ? <button onClick={() => loadMorePosts()}>
                 {loading ? 'Loading...' : 'Show More Challenges'}
+                <i className="material-icons left">arrow_forward</i>
+                <i className="material-icons right">arrow_back</i>
               </button>
               : 'No More Challenges'}
           </div>
@@ -93,8 +96,8 @@ const PostList = ({ data: { loading, error, allPosts, _allPostsMeta }, loadMoreP
             cursor: pointer;
             margin-bottom: 100px;
           }
-          button:focus, .btn:hover {
-            background-color: transparent !important;
+          .mt25 {
+            margin-top: 25px;
           }
         `}</style>
       </section>
