@@ -8,7 +8,7 @@ const Header = ({ pathname }) => (
         <a href="/" className="brand-logo center">Couples Challenges</a>
         <ul id="nav-mobile" className="left hide-on-med-and-down">
           <li className={pathname === '/' && 'active'}>
-            <Link prefetch href='/'>
+            <Link prefetch href='/index'>
               <a>Home</a>
             </Link>
           </li>
