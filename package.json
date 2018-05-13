@@ -6,8 +6,12 @@
   "author": "Hugo Meissner <hugomeissner@icloud.com>",
   "license": "MIT",
   "scripts": {
-    "start": "node server.js",
-    "lint": "standard"
+    "dev": "node server.js",
+    "build": "next build",
+    "start": "next start -p $PORT",
+    "heroku-postbuild": "npm run build",
+    "lint": "standard",
+    "export": "next export"
   },
   "dependencies": {
     "apollo-cache-inmemory": "^1.1.1",
