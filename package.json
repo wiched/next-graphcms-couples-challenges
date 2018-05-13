@@ -9,7 +9,8 @@
     "dev": "node server.js",
     "build": "next build",
     "start": "NODE_ENV=production node server.js",
-    "lint": "standard"
+    "lint": "standard",
+    "export": "next export"
   },
   "dependencies": {
     "apollo-cache-inmemory": "^1.1.1",
@@ -20,11 +21,11 @@
     "graphql-anywhere": "^4.0.1",
     "graphql-tag": "^2.5.0",
     "isomorphic-unfetch": "^2.0.0",
-    "next": "^4.1.4",
+    "next": "^6.0.1",
     "prop-types": "^15.6.0",
-    "react": "^16.2.0",
+    "react": "^16.3.2",
     "react-apollo": "^2.0.1",
-    "react-dom": "^16.2.0",
+    "react-dom": "^16.3.2",
     "react-markdown": "^3.1.0"
   },
   "devDependencies": {
