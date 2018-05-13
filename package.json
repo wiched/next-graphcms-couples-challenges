@@ -34,5 +34,8 @@
   },
   "standard": {
     "parser": "babel-eslint"
+  },
+  "routes": {
+    "/post/:post": "/post"
   }
 }
