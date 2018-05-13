@@ -1,6 +1,5 @@
-exportPathMap: () => {
-  return {
-    "/": { page: "/" },
-    "/post/:slug": { page: "/post" }
-  }
-}
+module.exports = {
+  exportPathMap: () => ({
+    '/': { page: '/' },
+  })
+};
