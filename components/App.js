@@ -8,10 +8,11 @@ const App = ({ children, pathname }) => (
       <title>CouplesChallenges.com</title>
       <meta charSet='utf-8' />
       <meta name='viewport' content='initial-scale=1.0, width=device-width' />
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
       <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css' />
     </Head>
     <Header pathname={pathname} />
-    <main>
+    <main className="container">
       {children}
     </main>
     <style jsx global>{`
@@ -24,7 +25,7 @@ const App = ({ children, pathname }) => (
         line-height: 1.5;
       }
       main {
-        max-width: 750px;
+        max-width: 750px !important;
         margin: 32px auto;
         padding: 0 24px;
       }
@@ -36,7 +37,7 @@ const App = ({ children, pathname }) => (
         margin: 0 auto;
         max-width: 650px;
       }
-      button {
+      .showMore button, #nav-mobile button {
         all: unset
       }
     `}</style>

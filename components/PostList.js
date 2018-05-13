@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
+import FlipMove from 'react-flip-move';
 
 const POSTS_PER_PAGE = 2
 
@@ -10,32 +11,44 @@ const PostList = ({ data: { loading, error, allPosts, _allPostsMeta }, loadMoreP
     const areMorePosts = allPosts.length < _allPostsMeta.count
     return (
       <section>
-        <h3 id="challenges">Pick A Challenge</h3>
-        <ul>
-          {allPosts.map(post => (
-            <li key={`post-${post.id}`}>
-              <Link prefetch href={`/post?slug=${post.slug}`} as={`/post/${post.slug}`}>
-                <a>
-                  <div className='placeholder'>
-                    <img
-                      alt={post.title}
-                      src={`https://media.graphcms.com/resize=w:150,h:150,fit:crop/${post.coverImage.handle}`}
-                    />
-                  </div>
 
-                  <p>{post.title} <br /> {post.content.substr(1, 250)}</p>
+        <h4 id="challenges">Pick A Challenge</h4>
+        <div className="row">
+          <ul>
+            <FlipMove duration={750} easing="ease-out">
+              {allPosts.map(post => (
+                <li key={`post-${post.id}`} className="col s12">
 
-                </a>
-              </Link>
-            </li>
-          ))}
-        </ul>
-        <div className='waves-effect waves-light deep-orange darken-1 btn-large showMore'>
-          {areMorePosts
-            ? <button onClick={() => loadMorePosts()}>
-              {loading ? 'Loading...' : 'Show More Challenges'}
-            </button>
-            : 'No More Challenges'}
+                  <Link prefetch href={`/post?slug=${post.slug}`} as={`/post/${post.slug}`}>
+                    <div>
+                      <div className="col s12 m6">
+                        <img
+                          className="img-responsive"
+                          alt={post.title}
+                          src={`https://media.graphcms.com/resize=w:250,h:150,fit:crop/${post.coverImage.handle}`}
+                        />
+                      </div>
+                      <div className="col s12 m6">
+                        <p>{post.title} <br /> {post.content.substr(1, 250)}</p>
+                      </div>
+                    </div>
+                  </Link>
+
+                </li>
+              ))}
+            </FlipMove>
+          </ul>
+        </div>
+        <div className="col s6"></div>
+
+        <div className="col s12">
+          <div className='waves-effect waves-light deep-orange darken-1 btn-large showMore'>
+            {areMorePosts
+              ? <button onClick={() => loadMorePosts()}>
+                {loading ? 'Loading...' : 'Show More Challenges'}
+              </button>
+              : 'No More Challenges'}
+          </div>
         </div>
         <style jsx>{`
           ul {
@@ -80,7 +93,9 @@ const PostList = ({ data: { loading, error, allPosts, _allPostsMeta }, loadMoreP
             cursor: pointer;
             margin-bottom: 100px;
           }
-
+          button:focus, .btn:hover {
+            background-color: transparent !important;
+          }
         `}</style>
       </section>
     )

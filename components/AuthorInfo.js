@@ -10,7 +10,7 @@ const AuthorInfo = ({ data: { loading, error, allAbouts } }) => {
 
         {allAbouts.map(about => (
           <div className='author' key={about.id}>
-            <h3 id="about">{about.title}</h3>
+            <h4 id="about">{about.title}</h4>
             <div className='info-header'>
               <img
                 alt={about.title}

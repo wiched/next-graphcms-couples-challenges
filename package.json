@@ -8,8 +8,7 @@
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
-    "start": "next start -p $PORT",
-    "heroku-postbuild": "next build",
+    "start": "node server.js",
     "lint": "standard",
     "export": "next export"
   },
@@ -28,6 +27,7 @@
     "react": "^16.3.2",
     "react-apollo": "^2.0.1",
     "react-dom": "^16.3.2",
+    "react-flip-move": "^3.0.1",
     "react-markdown": "^3.1.0"
   },
   "devDependencies": {
